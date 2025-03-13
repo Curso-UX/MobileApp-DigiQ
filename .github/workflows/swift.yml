@@ -15,15 +15,25 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Select Xcode version
-      run: sudo xcode-select -switch /Applications/Xcode_15.3.app/Contents/Developer
+      run: sudo xcode-select -switch /Applications/Xcode_15.4.app/Contents/Developer
 
-  
-    - name: Build project
+    - name: Verify project structure
       run: |
-        ls && cd ./DigiQ/
-        xcodebuild -project DigiQ.xcodeproj -scheme DigiQ -sdk iphoneos -configuration Release build
+        ls -la
+        cd DigiQ
+        ls -la  # Muestra los archivos dentro de DigiQ para depuración
+
+    - name: Clean and build project
+      run: |
+        cd DigiQ
+        xcodebuild clean
+        if [ -f "DigiQ.xcworkspace" ]; then
+          xcodebuild -workspace DigiQ.xcworkspace -scheme DigiQ -sdk iphoneos -configuration Release build
+        else
+          xcodebuild -project DigiQ.xcodeproj -scheme DigiQ -sdk iphoneos -configuration Release build
+        fi
 
     - name: Run tests
       run: |
-        cd MobileApp-DigiQ-main/DigiQ
-        xcodebuild test -project DigiQ.xcodeproj -scheme DigiQ -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest'
+        cd DigiQ
+        xcodebuild test -scheme DigiQ -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest'
