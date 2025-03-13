@@ -20,8 +20,8 @@ jobs:
   
     - name: Build project
       run: |
-        ls && cd ./DigiQ/DigiQ.xcodeproj
-        xcodebuild -project project.pbxproj -scheme DigiQ -sdk iphoneos -configuration Release build
+        ls && cd ./DigiQ/
+        xcodebuild -project DigiQ.xcodeproj -scheme DigiQ -sdk iphoneos -configuration Release build
 
     - name: Run tests
       run: |
