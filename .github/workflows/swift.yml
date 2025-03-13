@@ -2,9 +2,9 @@ name: Build iOS App
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -19,15 +19,15 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd DigiQ  # Asegúrate de usar la carpeta correcta
-        xcodebuild -scheme DigiQ -sdk iphoneos -configuration Release build
+        cd MobileApp-DigiQ-main/DigiQ  # Ruta corregida
+        xcodebuild clean -scheme DigiQ -sdk iphoneos -configuration Release
 
     - name: Build project
       run: |
-        cd DigiQ
-        xcodebuild -scheme DigiQ -sdk iphoneos -configuration Release build
+        cd MobileApp-DigiQ-main/DigiQ
+        xcodebuild -project DigiQ.xcodeproj -scheme DigiQ -sdk iphoneos -configuration Release build
 
     - name: Run tests
       run: |
-        cd DigiQ
-        xcodebuild test -scheme DigiQ -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest'
+        cd MobileApp-DigiQ-main/DigiQ
+        xcodebuild test -project DigiQ.xcodeproj -scheme DigiQ -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest'
