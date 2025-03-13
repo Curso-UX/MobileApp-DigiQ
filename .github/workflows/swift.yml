@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd DigiQ  # Asegúrate de usar la carpeta correcta
-        xcodebuild -scheme DigiQ -sdk iphoneos -configuration Release builds
+        xcodebuild -scheme DigiQ -sdk iphoneos -configuration Release build
 
     - name: Build project
       run: |
