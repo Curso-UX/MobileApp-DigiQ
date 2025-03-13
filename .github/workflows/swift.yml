@@ -19,7 +19,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd MobileApp-DigiQ-main/DigiQ/DigiQ  # Ruta corregida
+        cd MobileApp-DigiQ-main//MobileApp-DigiQ/DigiQ/DigiQ  # Ruta corregida
         xcodebuild clean -scheme DigiQ -sdk iphoneos -configuration Release
 
     - name: Build project
