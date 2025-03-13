@@ -1,4 +1,17 @@
 # MobileApp-DigiQ
+
+DigiQ fue desarrollada en SwiftUI sin dependencias externas, compatible únicamente con el entorno de iOS. Utilizamos componentes como NavigationLink y NavigationStack debido a su flexibilidad y compatibilídad.
+
+### Características
+
+SwiftUI: Todas las pantallas se construyeron utilizando SwiftUI.
+Previews Integrados: Cada pantalla y cada componente cuenta con su respectivo preview dentro del proyecto, permitiendo una rápida visualización y prueba de la interfaz.
+Navegación: Se implementa NavigationLink para la navegación básica y NavigationStack para la gestión moderna de la pila de navegación (requerido iOS 16 o superior).
+Entorno de Desarrollo:
+Emulador: iPhone 16 Pro
+Versión de iOS: 18.3.1
+Xcode: 16.2
+
 ## Para utilizar la App Mobile DigiQ
 ### Requerimientos:
 **1. MacOS con Sequoia (V: 18.3.1) en adelante y XCode (V: 16.2) instalado**
