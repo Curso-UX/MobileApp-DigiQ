@@ -20,7 +20,7 @@ jobs:
   
     - name: Build project
       run: |
-        ls && cd MobileApp-DigiQ-main/DigiQ/DigiQ
+        ls && cd ./DigiQ
         xcodebuild -project DigiQ.xcodeproj -scheme DigiQ -sdk iphoneos -configuration Release build
 
     - name: Run tests
